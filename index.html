@@ -34,7 +34,7 @@
           </li>
         </ul>
         <button type="button" class="rounded-pill btn-rounded">
-          +1 728365413
+          +33 7 67 93 89 01
           <span>
             <i class="fas fa-phone-alt"></i>
           </span>
@@ -53,10 +53,9 @@
       <!-- START THE CONTENT FOR THE INTRO  -->
       <div class="col-md-6 intros text-start">
         <h1 class="display-2">
-          <span class="display-2--intro">Hey!, I'm Patrick</span>
+          <span class="display-2--intro">Hey!, I'm Sevan Quesnot</span>
           <span class="display-2--description lh-base">
-            this is a multi-purpose responsive layout created with bootstrap v5. 
-            (here your can place your description text)
+            My name is Sevan Quesnot, a passionate software developer. I'm 18 years old and I'm from France, the bread country. Specialize in front-end and back-end development, ensuring seamless user experiences across all devices.
           </span>
         </h1>
         <button type="button" class="rounded-pill btn-rounded">Get in Touch
@@ -85,15 +84,15 @@
                              START SECTION 3 - THE CAMPANIES SECTION  
 ////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-  <section id="campanies" class="campanies">
+  <!-- <section id="campanies" class="campanies">
     <div class="container">
       <div class="row text-center">
         <h4 class="fw-bold lead mb-3">Trusted by campanies like</h4>
         <div class="heading-line mb-5"></div>
       </div>
-    </div>
+    </div> -->
     <!-- START THE CAMPANIES CONTENT  -->
-    <div class="container">
+    <!-- <div class="container">
       <div class="row">
         <div class="col-md-4 col-lg-2">
           <div class="campanies__logo-box shadow-sm">
@@ -127,7 +126,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////
                          START SECTION 4 - THE SERVICES  
@@ -453,50 +452,53 @@
       <h1 class="display-3 fw-bold text-capitalize">Latest work</h1>
       <div class="heading-line"></div>
       <p class="lead">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint porro temporibus distinctio.
+        Here we can see all of my last work I did.
       </p>
     </div>
     <!-- FILTER BUTTONS  -->
     <div class="row mt-5 mb-4 g-3 text-center">
       <div class="col-md-12">
-        <button class="btn btn-outline-primary" type="button">All</button>
-        <button class="btn btn-outline-primary" type="button">websites</button>
-        <button class="btn btn-outline-primary" type="button">design</button>
-        <button class="btn btn-outline-primary" type="button">mockup</button>
+        <button class="btn btn-outline-primary filter-btn" type="button" data-filter="all">All</button>
+        <button class="btn btn-outline-primary filter-btn" type="button" data-filter="school">school</button>
+        <button class="btn btn-outline-primary filter-btn" type="button" data-filter="design">design</button>
+        <button class="btn btn-outline-primary filter-btn" type="button" data-filter="personnal">personnal</button>
       </div>
     </div>
 
     <!-- START THE PORTFOLIO ITEMS  -->
     <div class="row">
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-4 col-md-6" data-category="personnal">
         <div class="portfolio-box shadow">
           <img src="images/portfolio/portfolio-1.jpg" alt="portfolio 1 image" title="portfolio 1 picture" class="img-fluid">
           <div class="portfolio-info">
             <div class="caption">
-              <h4>project name goes here 1</h4>
-              <p>category project</p>
+              <h4>Project Horror</h4>
+              <p>My psychological horror game using Unity. (Not finish yet)</p>
+              <p>Personnal</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-4 col-md-6" data-category="personnal, design">
         <div class="portfolio-box shadow">
           <img src="images/portfolio/portfolio-2.jpg" alt="portfolio 2 image" title="portfolio 2 picture" class="img-fluid">
           <div class="portfolio-info">
             <div class="caption">
-              <h4>project name goes here 2</h4>
-              <p>category project</p>
+              <h4>Exhibition</h4>
+              <p>An exhibition with my family and I, where I exposed my digital art.</p>
+              <p>Personnal</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6">
+      <div class="col-lg-4 col-md-6" data-category="personnal, design">
         <div class="portfolio-box shadow">
           <img src="images/portfolio/portfolio-3.jpg" alt="portfolio 3 image" title="portfolio 3 picture" class="img-fluid">
           <div class="portfolio-info">
             <div class="caption">
-              <h4>project name goes here 3</h4>
-              <p>category project</p>
+              <h4>Digital ArtWork</h4>
+              <p>My digital artwork created with various software tools. Available on my Instagram. @sir.sevan</p>
+              <p>Personnal / design</p>
             </div>
           </div>
         </div>
@@ -785,5 +787,29 @@
     
     </script>
      <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('#portfolio .col-lg-4.col-md-6');
+
+        filterButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+
+            portfolioItems.forEach(item => {
+              const categories = item.getAttribute('data-category')?.split(', ') || [];
+
+              if (filter === 'all' || categories.includes(filter)) {
+                item.style.display = 'block';
+              } else {
+                item.style.display = 'none';
+              }
+            });
+          });
+        });
+      });
+    </script>
+
+
 </body>
 </html>
