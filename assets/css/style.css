@@ -11212,4 +11212,42 @@ textarea.form-control-lg {
   transform: translate(-50%, -50%);
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# Bouton Download CV */
+
+.cv-download {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  padding: 12px 24px;
+  margin-top: 1.5rem;
+  background: #ffffff;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #6c2bff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.cv-download:hover {
+  text-decoration: none;
+}
+
+.cv-download .cv-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cv-download .cv-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #6c2bff;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
